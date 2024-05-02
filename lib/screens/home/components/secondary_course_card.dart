@@ -43,13 +43,6 @@ class SecondaryCourseCard extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(
-            height: 40,
-            child: VerticalDivider(
-              // thickness: 5,
-              color: Colors.white70,
-            ),
-          ),
           const SizedBox(width: 8),
           SvgPicture.asset(iconsSrc)
         ],

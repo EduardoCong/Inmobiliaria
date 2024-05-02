@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rive_animation/screens/onboding/onboding_screen.dart';
+import 'package:rive_animation/screens/entryPoint/entry_point.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,10 +8,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'The Flutter Way',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFFEEF1F8),
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           errorBorder: defaultInputBorder,
         ),
       ),
-      home: const OnbodingScreen(),
+      home: const EntryPoint(),
     );
   }
 }
