@@ -33,13 +33,6 @@ class UserProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Correo electrónico: usuario@example.com',
-                        style: TextStyle(
-                          fontSize: 16,
-                        ),
-                      ),
                     ],
                   ),
                 ],
@@ -76,7 +69,6 @@ class UserProfilePage extends StatelessWidget {
               subtitle: Text('Calle Principal 123'),
               leading: Icon(Icons.location_on),
             ),
-            // Puedes añadir más elementos aquí
           ],
         ),
       ),
