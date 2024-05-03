@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rive_animation/model/services.dart';
+import 'package:rive_animation/screens/entryPoint/entry_point.dart';
 
 class ServiceSelectionPage extends StatefulWidget {
   const ServiceSelectionPage({Key? key}) : super(key: key);
@@ -26,54 +27,60 @@ class _ServiceSelectionPageState extends State<ServiceSelectionPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: GridView.builder(
+        child: GridView(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 20.0,
             mainAxisSpacing: 20.0,
           ),
-          itemCount: servicePropertyListing.length,
-          itemBuilder: (context, index) {
-            final service = servicePropertyListing[index];
-            return GestureDetector(
-              onTap: () {
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: service.color,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      service.iconSrc,
-                      width: 80,
-                      height: 80,
-                    ),
-                    const SizedBox(height: 10.0),
-                    Text(
-                      service.name,
-                      style: const TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+          children: [
+            for (int i = 0; i < servicePropertyListing.length; i++)
+              if (i < 4)
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EntryPoint()
                       ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: servicePropertyListing[i].color,
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
-                    const SizedBox(height: 5.0),
-                    Text(
-                      service.description,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 14.0,
-                        color: Colors.white,
-                      ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          servicePropertyListing[i].iconSrc,
+                          width: 80,
+                          height: 80,
+                        ),
+                        const SizedBox(height: 10.0),
+                        Text(
+                          servicePropertyListing[i].name,
+                          style: const TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 5.0),
+                        Text(
+                          servicePropertyListing[i].description,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 14.0,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            );
-          },
+          ],
         ),
       ),
     );

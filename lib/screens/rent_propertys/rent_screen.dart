@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:rive_animation/model/course.dart';
 import 'package:rive_animation/model/users.dart';
@@ -65,27 +67,14 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                           fontSize: 16.0,
                         ),
                       ),
-                      const SizedBox(height: 10.0),
-                      Row(
-                        children: [
-                          const Text(
-                            'Color:',
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(width: 5.0),
-                          Container(
-                            width: 20.0,
-                            height: 20.0,
-                            decoration: BoxDecoration(
-                              color: _selectedProperty.color,
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        _selectedProperty.codRef,
+                        style: const TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontSize: 16.0,
+                        ),
                       ),
+                      const SizedBox(height: 10.0),
                     ],
                   ),
                 ),

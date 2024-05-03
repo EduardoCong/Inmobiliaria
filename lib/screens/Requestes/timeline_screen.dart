@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animation/screens/account_state/account_state.dart';
+import 'package:rive_animation/screens/rent_propertys/rent_screen.dart';
 
-class TimelinePage extends StatelessWidget {
+import '../../model/course.dart';
+
+class TimelinePage extends StatefulWidget {
   const TimelinePage({Key? key}) : super(key: key);
+
+  @override
+  State<TimelinePage> createState() => _TimelinePageState();
+}
+
+class _TimelinePageState extends State<TimelinePage> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +33,6 @@ class TimelinePage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 4,
-                    offset: const Offset(0, 3),
-                  ),
-                ],
               ),
               child: ListTile(
                 leading: Container(
@@ -37,24 +44,24 @@ class TimelinePage extends StatelessWidget {
                   ),
                   child: const Icon(Icons.home, color: Colors.white),
                 ),
-                title: Text(
+                title: const Text(
                   'Nombre de la Propiedad', // Nombre de la propiedad
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                subtitle: Column(
+                subtitle: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Cliente: Nombre del Cliente', // Nombre del cliente
-                      style: const TextStyle(fontSize: 14.0),
+                      style: TextStyle(fontSize: 14.0),
                     ),
                     Text(
                       'Descripción: Descripción de la Solicitud', // Descripción de la solicitud
-                      style: const TextStyle(fontSize: 14.0),
+                      style: TextStyle(fontSize: 14.0),
                     ),
                     Text(
                       'Estado: Pendiente', // Estado de la solicitud
-                      style: const TextStyle(fontSize: 14.0),
+                      style: TextStyle(fontSize: 14.0),
                     ),
                   ],
                 ),
@@ -62,14 +69,18 @@ class TimelinePage extends StatelessWidget {
                   width: 100,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Acción al presionar el botón de ver detalles
-                      // Por ejemplo, podrías navegar a una nueva pantalla para ver los detalles completos
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RentalStatementPage(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      backgroundColor: Colors.blue,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
                     ),
-                    child: const Text('Ver Detalles', style: TextStyle(fontSize: 14.0)),
+                    child: const Text('Ver Detalles', style: TextStyle(fontSize: 13.0)),
                   ),
                 ),
               ),
@@ -79,8 +90,12 @@ class TimelinePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Acción al presionar el botón para crear una nueva solicitud
-          // Por ejemplo, podrías navegar a una nueva pantalla para crear una solicitud
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const RentalRequestPage(),
+            ),
+          );
         },
         child: const Icon(Icons.add),
       ),

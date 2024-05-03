@@ -1,0 +1,1 @@
+ C:\\Users\\Desarrollos\\Desktop\\Inmobiliaria\\.dart_tool\\flutter_build\\3b9e5ff60c18d9723d25f5933b346f60\\native_assets.yaml: 

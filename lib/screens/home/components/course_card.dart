@@ -4,12 +4,11 @@ class CourseCard extends StatelessWidget {
   const CourseCard({
     Key? key,
     required this.title,
-    this.color = const Color(0xFF7553F6),
+    required this.codRefs,
     this.iconSrc = "assets/icons/ios.svg",
   }) : super(key: key);
 
-  final String title, iconSrc;
-  final Color color;
+  final String title, iconSrc, codRefs;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +16,9 @@ class CourseCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       height: 280,
       width: 260,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: const BorderRadius.all(Radius.circular(30)),
+      decoration: const BoxDecoration(
+        color: Color(0xFF7553F6),
+        borderRadius: BorderRadius.all(Radius.circular(30)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,12 +43,7 @@ class CourseCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text(
-                      "61 SECTIONS - 11 HOURS",
-                      style: TextStyle(
-                        color: Colors.white38,
-                      ),
-                    ),
+                    Text(codRefs),
                     const Spacer(),
                   ],
                 ),

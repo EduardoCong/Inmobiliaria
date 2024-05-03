@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                         child: CourseCard(
                           title: property2[index].title,
                           iconSrc: property2[index].iconSrc,
-                          color: property2[index].color,
+                          codRefs: property2[index].codRef,
                         ),
                       ),
                     );
