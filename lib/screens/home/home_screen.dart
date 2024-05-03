@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                 child: Text(
                   "Propiedades",
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Colors.black, 
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 200,
                 child: PageView.builder(
-                  itemCount: courses.length,
+                  itemCount: property2.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -43,9 +43,9 @@ class HomePage extends StatelessWidget {
                           // );
                         },
                         child: CourseCard(
-                          title: courses[index].title,
-                          iconSrc: courses[index].iconSrc,
-                          color: courses[index].color,
+                          title: property2[index].title,
+                          iconSrc: property2[index].iconSrc,
+                          color: property2[index].color,
                         ),
                       ),
                     );

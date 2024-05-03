@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animation/screens/Services/services_screen.dart';
 import 'package:rive_animation/screens/entryPoint/entry_point.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'The Flutter',
+      title: 'Inmobiliaria',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFFEEF1F8),
         primarySwatch: Colors.blue,
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           errorBorder: defaultInputBorder,
         ),
       ),
-      home: const EntryPoint(),
+      home: const ServiceSelectionPage(),
     );
   }
 }
