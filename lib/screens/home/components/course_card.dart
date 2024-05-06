@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 
-class CourseCard extends StatelessWidget {
+class CourseCard extends StatefulWidget {
   const CourseCard({
     Key? key,
     required this.title,
-    required this.codRefs,
-    this.iconSrc = "assets/icons/ios.svg",
+    required this.codrefs,
   }) : super(key: key);
 
-  final String title, iconSrc, codRefs;
+  final String title, codrefs;
 
+  @override
+  State<CourseCard> createState() => _CourseCardState();
+}
+
+class _CourseCardState extends State<CourseCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-      height: 280,
-      width: 260,
+      height: 290,
+      width: 280,
       decoration: const BoxDecoration(
         color: Color(0xFF7553F6),
         borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -30,7 +34,7 @@ class CourseCard extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      title,
+                      widget.title,
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: Colors.white, fontWeight: FontWeight.w600),
                     ),
@@ -43,7 +47,7 @@ class CourseCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Text(codRefs),
+                    Text(widget.codrefs),
                     const Spacer(),
                   ],
                 ),

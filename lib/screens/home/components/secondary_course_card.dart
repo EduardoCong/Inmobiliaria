@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SecondaryCourseCard extends StatelessWidget {
   const SecondaryCourseCard({
     Key? key,
-    required this.title,
-    this.iconsSrc = "assets/icons/ios.svg",
+    required this.proClient,
+    required this.type,
     this.colorl = const Color(0xFF7553F6),
   }) : super(key: key);
 
-  final String title, iconsSrc;
+  final String proClient, type;
   final Color colorl;
 
   @override
@@ -17,8 +16,8 @@ class SecondaryCourseCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       decoration: BoxDecoration(
-          color: colorl,
-          borderRadius: const BorderRadius.all(Radius.circular(20))),
+        color: colorl,
+        borderRadius: const BorderRadius.all(Radius.circular(20))),
       child: Row(
         children: [
           Expanded(
@@ -26,16 +25,16 @@ class SecondaryCourseCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
+                  proClient,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
                 ),
                 const SizedBox(height: 4),
-                const Text(
-                  "Watch video - 15 mins",
-                  style: TextStyle(
+                Text(
+                  type,
+                  style: const TextStyle(
                     color: Colors.white60,
                     fontSize: 16,
                   ),
@@ -44,7 +43,6 @@ class SecondaryCourseCard extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          SvgPicture.asset(iconsSrc)
         ],
       ),
     );
