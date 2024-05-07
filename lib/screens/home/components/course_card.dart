@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animation/screens/home/components/secondary_course_card.dart';
 
 class CourseCard extends StatefulWidget {
   const CourseCard({
@@ -18,8 +19,8 @@ class _CourseCardState extends State<CourseCard> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-      height: 290,
-      width: 280,
+      height: 200,
+      width: 350,
       decoration: const BoxDecoration(
         color: Color(0xFF7553F6),
         borderRadius: BorderRadius.all(Radius.circular(30)),

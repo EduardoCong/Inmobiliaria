@@ -98,7 +98,6 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                         child: Text(user.name),
                       );
                     }).toList(),
-                    // Agrega más listas de usuarios aquí si es necesario
                   ],
                   decoration: const InputDecoration(
                     labelText: 'Cliente',
@@ -151,20 +150,6 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                 ),
                 const SizedBox(height: 20.0),
                 Row(
-                  children: [
-                    Checkbox(
-                      value: _isActive,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          _isActive = value!;
-                        });
-                      },
-                    ),
-                    const Text('Activo'),
-                  ],
-                ),
-                const SizedBox(height: 20.0),
-                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
@@ -199,7 +184,7 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                         Navigator.of(context).pop();
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red, // Background color rojo
+                        backgroundColor: Colors.red,
                       ),
                       child: const Text('Cancelar'),
                     ),
