@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rive_animation/model/course.dart';
+import 'package:rive_animation/model/inmobiliria.dart';
 import 'package:rive_animation/model/users.dart';
 
 class RentalRequestPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class RentalRequestPage extends StatefulWidget {
 class _RentalRequestPageState extends State<RentalRequestPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  late User _selectedUser;
+  late UserRent _selectedUser;
   late Course _selectedProperty;
   String _requestStatus = 'Pendiente';
   bool _isActive = true;
@@ -22,7 +23,7 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
   @override
   void initState() {
     super.initState();
-    _selectedUser = userJohnDoe.first;
+    _selectedUser = propertiesRent.first;
     _selectedProperty = property2.first;
   }
 
@@ -30,7 +31,7 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Solicitud de Alquiler'),
+        title: const Text('Solicitud de Servicio'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -78,38 +79,6 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                     ],
                   ),
                 ),
-                DropdownButtonFormField<User>(
-                  value: _selectedUser,
-                  onChanged: (User? value) {
-                    setState(() {
-                      _selectedUser = value!;
-                    });
-                  },
-                  items: [
-                    ...userJohnDoe.map<DropdownMenuItem<User>>((User user) {
-                      return DropdownMenuItem<User>(
-                        value: user,
-                        child: Text(user.name),
-                      );
-                    }).toList(),
-                    ...userJaneSmith.map<DropdownMenuItem<User>>((User user) {
-                      return DropdownMenuItem<User>(
-                        value: user,
-                        child: Text(user.name),
-                      );
-                    }).toList(),
-                  ],
-                  decoration: const InputDecoration(
-                    labelText: 'Cliente',
-                    border: OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null) {
-                      return 'Por favor seleccione un cliente';
-                    }
-                    return null;
-                  },
-                ),
                 const SizedBox(height: 20.0),
                 TextFormField(
                   decoration: const InputDecoration(
@@ -119,31 +88,6 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Por favor ingrese una descripción';
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(height: 20.0),
-                DropdownButtonFormField<String>(
-                  value: _requestStatus,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _requestStatus = value!;
-                    });
-                  },
-                  items: ['Pendiente', 'Aprobado', 'Rechazado'].map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  decoration: const InputDecoration(
-                    labelText: 'Estado de la Solicitud',
-                    border: OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null) {
-                      return 'Por favor seleccione un estado';
                     }
                     return null;
                   },
@@ -175,9 +119,9 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green, // Background color verde
+                        backgroundColor: Colors.green,
                       ),
-                      child: const Text('Solicitar'),
+                      child: const Text('Enviar'),
                     ),
                     ElevatedButton(
                       onPressed: () {

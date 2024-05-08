@@ -10,15 +10,61 @@ class RentalProperty {
   });
 }
 
+class Arrendamientos{
+  final Propiedad codigoPro;
+  final UserRent clientArren;
+  final String fechaInicio;
+  final String fechaFinal;
+  final String periocidad;
+  final int monto;
+  final List<StatusArren>? status;
+
+  Arrendamientos({
+    required this.clientArren,
+    required this.codigoPro,
+    required this.fechaFinal,
+    required this.fechaInicio,
+    required this.monto,
+    required this.periocidad,
+    this.status
+  });
+}
+
+class StatusArren{
+  final String fechaApagar;
+  final String fechaPago;
+  final String descuento;
+  final String statusA;
+
+  StatusArren({
+    required this.descuento,
+    required this.fechaApagar,
+    required this.fechaPago,
+    required this.statusA
+  });
+}
+
+class ServicesProperty{
+  final String serviceName;
+
+  ServicesProperty({
+    required this.serviceName,
+  });
+}
+
 class Propiedad {
   final String title;
   final String codRef;
   final List<RentalProperty> rentalProperties;
+  final List<Arrendamientos>? arrendamientos;
+  final List<ServicesProperty>? serviciosPropiedad;
 
   Propiedad({
     required this.title,
     required this.codRef,
     required this.rentalProperties,
+    this.arrendamientos,
+    this.serviciosPropiedad,
   });
 }
 
@@ -40,6 +86,7 @@ class Request {
   final UserRent user;
   final String status;
   final List<Response> solicitudPros;
+  final List<ServicesProperty> servicios;
 
   Request({
     required this.id,
@@ -47,6 +94,7 @@ class Request {
     required this.user,
     required this.status,
     required this.solicitudPros,
+    required this.servicios,
   });
 }
 
@@ -94,6 +142,14 @@ final List<UserRent> propertiesRent = [
                     solicitudProMessage: "Aprobado lalalalalalalalala",
                   ),
                 ],
+                servicios: [
+                  ServicesProperty(
+                    serviceName: "Queja"
+                  ),
+                  ServicesProperty(
+                    serviceName: "Reparacion"
+                  ),
+                ]
               ),
             ],
           ),
@@ -120,6 +176,14 @@ final List<UserRent> propertiesRent = [
                     solicitudProMessage: "Aprobado lalalalalalalalala",
                   ),
                 ],
+                servicios: [
+                  ServicesProperty(
+                    serviceName: "Reparacion"
+                  ),
+                  ServicesProperty(
+                    serviceName: "Consulta"
+                  )
+                ]
               ),
             ],
           ),
@@ -146,10 +210,41 @@ final List<UserRent> propertiesRent = [
                     solicitudProMessage: "Aprobado lalalalalalalalala",
                   ),
                 ],
+                servicios: [
+                   ServicesProperty(
+                    serviceName: "Reparacion"
+                  ),
+                  ServicesProperty(
+                    serviceName: "Consulta"
+                  )
+                ]
               ),
             ],
           ),
         ],
+        arrendamientos:[
+          Arrendamientos(
+            clientArren:
+            UserRent(
+              name: "name",
+              apellido: "apellido",
+              properties: []
+          ), 
+          codigoPro: Propiedad(title: "title", codRef: "codRef", rentalProperties: []),
+          fechaFinal: "15/10/2025",
+          fechaInicio: "6/05/2024",
+          monto: 3000, 
+          periocidad: "Mensual",
+          status: [
+            StatusArren(
+              descuento: "Sin Descuento",
+              fechaApagar: "13/05/2024",
+              fechaPago: "14/05/2024",
+              statusA: "Pagado"
+              ),
+            ]
+          ),
+        ]
       ),
       Propiedad(
         title: "Propiedad Enriquecedora",
@@ -172,7 +267,15 @@ final List<UserRent> propertiesRent = [
                   properties: [],
                 ),
                 status: "Pendiente",
-                solicitudPros: [],
+                solicitudPros: [], 
+                servicios: [
+                   ServicesProperty(
+                    serviceName: "Reparacion"
+                  ),
+                  ServicesProperty(
+                    serviceName: "Consulta"
+                  )
+                ],
               ),
             ],
           ),
@@ -199,6 +302,14 @@ final List<UserRent> propertiesRent = [
                     solicitudProMessage: "Aprobado lalalalalalalalala",
                   ),
                 ],
+                servicios: [
+                   ServicesProperty(
+                    serviceName: "Reparacion"
+                  ),
+                  ServicesProperty(
+                    serviceName: "Consulta"
+                  )
+                ]
               ),
             ],
           ),
@@ -225,9 +336,40 @@ final List<UserRent> propertiesRent = [
                     solicitudProMessage: "Aprobado lalalalalalalalala",
                   ),
                 ],
+                servicios: [
+                   ServicesProperty(
+                    serviceName: "Reparacion"
+                  ),
+                  ServicesProperty(
+                    serviceName: "Consulta"
+                  )
+                ]
               ),
             ],
           ),
+        ],
+        arrendamientos:[
+          Arrendamientos(
+            clientArren:
+            UserRent(
+              name: "name",
+              apellido: "apellido",
+              properties: []
+          ), 
+          codigoPro: Propiedad(title: "title", codRef: "codRef", rentalProperties: []),
+          fechaFinal: "15/10/2025",
+          fechaInicio: "6/05/2024",
+          monto: 3000, 
+          periocidad: "Mensual",
+          status: [
+            StatusArren(
+              descuento: "Sin Descuento",
+              fechaApagar: "13/05/2024",
+              fechaPago: "14/05/2024",
+              statusA: "Pagado"
+              ),
+            ]
+          )
         ],
       ),
       Propiedad(
