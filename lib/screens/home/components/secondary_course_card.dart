@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animation/screens/rent_propertys/rent_screen.dart';
 
 class SecondaryCourseCard extends StatelessWidget {
   const SecondaryCourseCard({
@@ -22,25 +23,33 @@ class SecondaryCourseCard extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  proClient,
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  type,
-                  style: const TextStyle(
-                    color: Colors.white60,
-                    fontSize: 16,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => const RentalRequestPage(),
+                  )
+                );
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    proClient,
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
-                )
-              ],
+                  const SizedBox(height: 4),
+                  Text(
+                    type,
+                    style: const TextStyle(
+                      color: Colors.white60,
+                      fontSize: 16,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           const SizedBox(width: 8),

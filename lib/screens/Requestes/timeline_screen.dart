@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rive_animation/model/inmobiliria.dart';
-import 'package:rive_animation/screens/rent_propertys/rent_screen.dart';
+import 'package:rive_animation/screens/Requestes/request_screen.dart';
 
 class TimelinePage extends StatefulWidget {
   const TimelinePage({Key? key}) : super(key: key);
@@ -29,11 +29,11 @@ class _TimelinePageState extends State<TimelinePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const RentalRequestPage(),
+                  builder: (context) => const RequestPage(),
                 ),
               );
             },
-            icon: const Icon(Icons.add),
+            icon: const Icon(Icons.timeline_outlined),
             padding: const EdgeInsets.all(4),
             color: Colors.blue,
           ),

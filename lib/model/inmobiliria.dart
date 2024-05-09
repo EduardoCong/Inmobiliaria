@@ -211,7 +211,7 @@ final List<UserRent> propertiesRent = [
                   ),
                 ],
                 servicios: [
-                   ServicesProperty(
+                    ServicesProperty(
                     serviceName: "Reparacion"
                   ),
                   ServicesProperty(
@@ -269,7 +269,7 @@ final List<UserRent> propertiesRent = [
                 status: "Pendiente",
                 solicitudPros: [], 
                 servicios: [
-                   ServicesProperty(
+                    ServicesProperty(
                     serviceName: "Reparacion"
                   ),
                   ServicesProperty(
@@ -303,7 +303,7 @@ final List<UserRent> propertiesRent = [
                   ),
                 ],
                 servicios: [
-                   ServicesProperty(
+                    ServicesProperty(
                     serviceName: "Reparacion"
                   ),
                   ServicesProperty(
@@ -337,7 +337,7 @@ final List<UserRent> propertiesRent = [
                   ),
                 ],
                 servicios: [
-                   ServicesProperty(
+                    ServicesProperty(
                     serviceName: "Reparacion"
                   ),
                   ServicesProperty(
@@ -355,11 +355,11 @@ final List<UserRent> propertiesRent = [
               name: "name",
               apellido: "apellido",
               properties: []
-          ), 
+          ),
           codigoPro: Propiedad(title: "title", codRef: "codRef", rentalProperties: []),
           fechaFinal: "15/10/2025",
           fechaInicio: "6/05/2024",
-          monto: 3000, 
+          monto: 3000,
           periocidad: "Mensual",
           status: [
             StatusArren(
@@ -378,5 +378,36 @@ final List<UserRent> propertiesRent = [
         rentalProperties: [],
       ),
     ],
+  ),
+];
+
+final List<Request> request = [
+  Request(
+    id: "01",
+    propertyTypes: RentalProperty(
+      propertyType: "Local",
+      rentingClient: "Ariadne Irais",
+      solicitudPro: [],
+    ),
+    user: UserRent(
+      name: "Eduardo",
+      apellido: "Cong",
+      properties: [],
+    ),
+    status: "Pendiente",
+    solicitudPros: [
+      Response(
+        requestId: "01",
+        solicitudProMessage: "Aprobado lalalalalalalalala",
+      ),
+    ],
+    servicios: [
+        ServicesProperty(
+        serviceName: "Reparacion"
+      ),
+      ServicesProperty(
+        serviceName: "Consulta"
+      )
+    ]
   ),
 ];

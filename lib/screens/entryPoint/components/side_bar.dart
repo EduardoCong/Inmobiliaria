@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animation/screens/Requestes/solicitudes_page.dart';
 import 'package:rive_animation/screens/Requestes/timeline_screen.dart';
 import 'package:rive_animation/screens/account_state/account_state.dart';
 import 'package:rive_animation/screens/profile/profile_screen.dart';
@@ -78,7 +79,7 @@ class _SideBarState extends State<SideBar> {
                           });
                           Navigator.push(
                             context, MaterialPageRoute(
-                              builder: (context) => const TimelinePage(),
+                              builder: (context) => const TimelineItem(),
                             )
                           );
                         },
