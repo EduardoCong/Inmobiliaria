@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rive_animation/screens/Requestes/solicitudes_page.dart';
 import 'package:rive_animation/screens/Requestes/timeline_screen.dart';
 import 'package:rive_animation/screens/account_state/account_state.dart';
+import 'package:rive_animation/screens/arrendamientos/arrendaminetos_screen.dart';
 import 'package:rive_animation/screens/profile/profile_screen.dart';
 
 import '../../../model/menu.dart';
@@ -89,7 +90,7 @@ class _SideBarState extends State<SideBar> {
                         },
                       ))
                   .toList(),
-                  ...estadodeCuenta
+                  ...Arrendamientos
                   .map((menu) => SideMenu(
                         menu: menu,
                         selectedMenu: selectedSideMenu,
@@ -100,7 +101,7 @@ class _SideBarState extends State<SideBar> {
                           });
                           Navigator.push(
                             context, MaterialPageRoute(
-                              builder: (context) => const RentalStatementPage(),
+                              builder: (context) => const ArrendamientosScreen(),
                             )
                           );
                         },

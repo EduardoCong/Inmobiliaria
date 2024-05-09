@@ -36,3 +36,13 @@ List<Menu> estadodeCuenta = [
         stateMachineName: "HOME_interactivity"),
   ),
 ];
+
+List<Menu> Arrendamientos = [
+  Menu(
+    title: "Arrendamientos",
+    rive: RiveModel(
+        src: "assets/RiveAssets/icons.riv",
+        artboard: "HOME",
+        stateMachineName: "HOME_interactivity"),
+  ),
+];

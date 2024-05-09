@@ -1,9 +1,13 @@
-2024/05/07-09:47:51.193 21d4 Reusing MANIFEST C:\Users\aleja\AppData\Local\Temp\flutter_tools.2f1e3de8\flutter_tools_chrome_device.8e14eb6b\Default\Site Characteristics Database/MANIFEST-000001
-2024/05/07-09:47:51.198 3008 Compacting 4@0 + 0@1 files
-2024/05/07-09:47:51.205 3008 Generated table #11@0: 2 keys, 197 bytes
-2024/05/07-09:47:51.206 3008 Compacted 4@0 + 0@1 files => 197 bytes
-2024/05/07-09:47:51.208 3008 compacted to: files[ 0 1 0 0 0 0 0 ]
-2024/05/07-09:47:51.210 3008 Delete type=2 #4
-2024/05/07-09:47:51.210 3008 Delete type=2 #6
-2024/05/07-09:47:51.210 3008 Delete type=2 #7
-2024/05/07-09:47:51.211 3008 Delete type=2 #8
+2024/05/09-06:49:09.733 5998 Reusing MANIFEST C:\Users\aleja\AppData\Local\Temp\flutter_tools.191600e\flutter_tools_chrome_device.2171fdd3\Default\Site Characteristics Database/MANIFEST-000001
+2024/05/09-06:49:09.735 5998 Recovering log #3
+2024/05/09-06:49:09.736 5998 Level-0 table #13: started
+2024/05/09-06:49:09.741 5998 Level-0 table #13: 226 bytes OK
+2024/05/09-06:49:09.741 5998 Recovering log #6
+2024/05/09-06:49:09.741 5998 Level-0 table #14: started
+2024/05/09-06:49:09.745 5998 Level-0 table #14: 311 bytes OK
+2024/05/09-06:49:09.746 5998 Recovering log #10
+2024/05/09-06:49:09.746 5998 Reusing old log C:\Users\aleja\AppData\Local\Temp\flutter_tools.191600e\flutter_tools_chrome_device.2171fdd3\Default\Site Characteristics Database/000010.log 
+2024/05/09-06:49:09.750 5998 Delete type=0 #3
+2024/05/09-06:49:09.750 5998 Delete type=2 #4
+2024/05/09-06:49:09.751 5998 Delete type=2 #6
+2024/05/09-06:49:09.751 5998 Delete type=0 #6

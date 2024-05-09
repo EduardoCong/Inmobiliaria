@@ -30,19 +30,19 @@ class _TimelineItemState extends State<TimelineItem> {
               const Icon(Icons.access_time),
               const SizedBox(width: 8),
               Text(
-                'ID del Request: ${}',
+                'ID del Request: ${_request.properties.first.rentalProperties.reversed.first.solicitudPro.first.id}',
                 style: const TextStyle(fontSize: 16),
               ),
             ],
           ),
           const SizedBox(height: 8),
           Text(
-            'Estado: ${firstRequest.status}',
+            'Estado: ${_request.properties.first.rentalProperties.reversed.first.solicitudPro.first.status}',
             style: const TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 8),
           Text(
-            'Tipo de Servicio: ${firstRequest.servicios.map((servicio) => servicio.serviceName).join(", ")}',
+            'Tipo de Servicio: ${_request.properties.first.rentalProperties.reversed.first.solicitudPro.first.propertyTypes}',
             style: const TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 16),
