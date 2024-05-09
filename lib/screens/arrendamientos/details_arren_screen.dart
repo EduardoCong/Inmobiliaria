@@ -1,38 +1,67 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:rive_animation/model/inmobiliria.dart';
 
-class ArrendamientoDetailScreen extends StatelessWidget {
-  final Arrendamientos? arrendamiento;
+class ArrendamientoDetailScreen extends StatefulWidget {
+  const ArrendamientoDetailScreen({Key? key}) : super(key: key);
 
-  const ArrendamientoDetailScreen({super.key, this.arrendamiento});
+  @override
+  State<ArrendamientoDetailScreen> createState() => _ArrendamientoDetailScreenState();
+}
+
+class _ArrendamientoDetailScreenState extends State<ArrendamientoDetailScreen> {
+  late UserRent _details;
+
+  @override
+  void initState() {
+    super.initState();
+    _details = propertiesRent.first;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detalles del Arrendamiento'),
+        title: const Text(''),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
-            Text('Título: ${arrendamiento!.codigoPro.title}'),
-            Text('Fecha Inicio: ${arrendamiento!.fechaInicio}'),
-            Text('Fecha Final: ${arrendamiento!.fechaFinal}'),
-            Text('Monto: \$${arrendamiento!.monto}'),
-            Text('Periocidad: ${arrendamiento!.periocidad}'),
-            Text('Status: ${arrendamiento!.status != null ? arrendamiento?.status![0].statusA : "Sin status"}'),
+            _buildDetailItem(label: 'Título', value: propertiesRent.first.properties.first.rentalProperties.last.propertyType),
+            _buildDetailItem(label: 'Fecha Inicio', value: propertiesRent.first.properties.first.arrendamientos!.first.status!.first.fechaApagar),
+            _buildDetailItem(label: 'Fecha Final', value: propertiesRent.first.properties.first.arrendamientos!.first.status!.first.fechaPago),
+            _buildDetailItem(label: 'Monto', value: propertiesRent.first.properties.first.arrendamientos!.first.monto.toString()),
+            _buildDetailItem(label: 'Descuento', value: propertiesRent.first.properties.first.arrendamientos!.first.status!.first.descuento),
+            _buildDetailItem(label: 'Estado', value: propertiesRent.first.properties.first.arrendamientos!.first.status!.first.statusA),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Aquí puedes agregar la lógica para gestionar el arrendamiento
-              },
-              child: const Text('Gestionar Arrendamiento'),
-            ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildDetailItem({required String label, required String value}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 16,
+          ),
+        ),
+        const SizedBox(height: 12),
+      ],
     );
   }
 }

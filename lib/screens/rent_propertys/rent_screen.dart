@@ -1,9 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:rive_animation/model/course.dart';
 import 'package:rive_animation/model/inmobiliria.dart';
-import 'package:rive_animation/model/users.dart';
 
 class RentalRequestPage extends StatefulWidget {
   const RentalRequestPage({Key? key}) : super(key: key);
@@ -16,7 +14,6 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   late UserRent _selectedUser;
-  late Course _selectedProperty;
   String _requestStatus = 'Pendiente';
   bool _isActive = true;
 
@@ -24,7 +21,6 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
   void initState() {
     super.initState();
     _selectedUser = propertiesRent.first;
-    _selectedProperty = property2.first;
   }
 
   @override
@@ -53,7 +49,7 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        _selectedProperty.title,
+                        _selectedUser.properties.first.title,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
@@ -62,19 +58,13 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
                       ),
                       const SizedBox(height: 5.0),
                       Text(
-                        _selectedProperty.description,
+                        _selectedUser.properties.first.codRef,
                         style: const TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 16.0,
                         ),
                       ),
-                      Text(
-                        _selectedProperty.codRef,
-                        style: const TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 16.0,
-                        ),
-                      ),
+                      _buildServiceNames(),
                       const SizedBox(height: 10.0),
                     ],
                   ),
@@ -140,5 +130,24 @@ class _RentalRequestPageState extends State<RentalRequestPage> {
         ),
       ),
     );
+  }
+
+  Widget _buildServiceNames() {
+    if (_selectedUser.properties.first.serviciosPropiedad != null) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: _selectedUser.properties.first.serviciosPropiedad!
+            .map((service) => Text(
+                  service.serviceName,
+                  style: const TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontSize: 16.0,
+                  ),
+                ))
+            .toList(),
+      );
+    } else {
+      return const SizedBox.shrink();
+    }
   }
 }

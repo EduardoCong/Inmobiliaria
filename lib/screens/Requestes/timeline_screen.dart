@@ -23,22 +23,6 @@ class _TimelinePageState extends State<TimelinePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Historial'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const RequestPage(),
-                ),
-              );
-            },
-            icon: const Icon(Icons.timeline_outlined),
-            padding: const EdgeInsets.all(4),
-            color: Colors.blue,
-          ),
-          const SizedBox(width: 8),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
