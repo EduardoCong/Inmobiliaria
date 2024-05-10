@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rive_animation/screens/rent_propertys/rent_screen.dart';
+
+import '../../Requestes/timeline_screen.dart';
 
 class SecondaryCourseCard extends StatelessWidget {
   const SecondaryCourseCard({
@@ -26,7 +27,7 @@ class SecondaryCourseCard extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const RentalRequestPage(),
+                  builder: (context) => const TimelineItem(),
                   )
                 );
               },

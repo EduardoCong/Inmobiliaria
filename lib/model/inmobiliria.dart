@@ -267,7 +267,7 @@ final List<UserRent> propertiesRent = [
                   properties: [],
                 ),
                 status: "Pendiente",
-                solicitudPros: [], 
+                solicitudPros: [],
                 servicios: [
                     ServicesProperty(
                     serviceName: "Reparacion"

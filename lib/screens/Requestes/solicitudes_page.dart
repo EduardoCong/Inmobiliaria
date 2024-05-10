@@ -1,15 +1,17 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:rive_animation/model/inmobiliria.dart';
 import 'package:rive_animation/screens/Requestes/timeline_screen.dart';
 
-class TimelineItem extends StatefulWidget {
-  const TimelineItem({Key? key}) : super(key: key);
+class Solicitudes extends StatefulWidget {
+  const Solicitudes({Key? key}) : super(key: key);
 
   @override
-  State<TimelineItem> createState() => _TimelineItemState();
+  State<Solicitudes> createState() => _SolicitudesState();
 }
 
-class _TimelineItemState extends State<TimelineItem> {
+class _SolicitudesState extends State<Solicitudes> {
   late UserRent _request;
 
   @override
@@ -24,7 +26,7 @@ Widget build(BuildContext context) {
     appBar: AppBar(
       title: const Center(
         child: Text('Historial')
-      ),      
+      ),
     ),
     body: ListView.builder(
       itemCount:  _request.properties.length,
@@ -57,7 +59,7 @@ Widget build(BuildContext context) {
                       ),
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => const TimelinePage(),
+                          builder: (context) => const TimelineItem(),
                           )
                         );
                       },

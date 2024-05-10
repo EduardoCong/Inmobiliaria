@@ -1,13 +1,11 @@
-2024/05/09-09:33:31.374 2da4 Reusing MANIFEST C:\Users\DESARR~1\AppData\Local\Temp\flutter_tools.4d195786\flutter_tools_chrome_device.9c20ecdd\Default\Site Characteristics Database/MANIFEST-000001
-2024/05/09-09:33:31.376 2da4 Compacting 8@0 + 0@1 files
-2024/05/09-09:33:31.379 2da4 Generated table #20@0: 2 keys, 197 bytes
-2024/05/09-09:33:31.380 2da4 Compacted 8@0 + 0@1 files => 197 bytes
-2024/05/09-09:33:31.381 2da4 compacted to: files[ 0 1 0 0 0 0 0 ]
-2024/05/09-09:33:31.381 2da4 Delete type=2 #4
-2024/05/09-09:33:31.382 2da4 Delete type=2 #6
-2024/05/09-09:33:31.382 2da4 Delete type=2 #11
-2024/05/09-09:33:31.382 2da4 Delete type=2 #13
-2024/05/09-09:33:31.382 2da4 Delete type=2 #14
-2024/05/09-09:33:31.382 2da4 Delete type=2 #15
-2024/05/09-09:33:31.382 2da4 Delete type=2 #16
-2024/05/09-09:33:31.383 2da4 Delete type=2 #17
+2024/05/09-19:17:59.612 1680 Reusing MANIFEST C:\Users\aleja\AppData\Local\Temp\flutter_tools.e20ccf53\flutter_tools_chrome_device.8bdb61e8\Default\Site Characteristics Database/MANIFEST-000001
+2024/05/09-19:17:59.613 1680 Recovering log #19
+2024/05/09-19:17:59.614 1680 Reusing old log C:\Users\aleja\AppData\Local\Temp\flutter_tools.e20ccf53\flutter_tools_chrome_device.8bdb61e8\Default\Site Characteristics Database/000019.log 
+2024/05/09-19:17:59.615 1680 Delete type=0 #3
+2024/05/09-19:17:59.615 1680 Delete type=2 #4
+2024/05/09-19:17:59.615 1680 Delete type=2 #6
+2024/05/09-19:17:59.615 1680 Delete type=0 #6
+2024/05/09-19:17:59.615 1680 Delete type=0 #10
+2024/05/09-19:17:59.615 1680 Delete type=2 #11
+2024/05/09-19:17:59.615 1680 Delete type=2 #13
+2024/05/09-19:17:59.615 1680 Delete type=2 #14
